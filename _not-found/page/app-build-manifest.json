@@ -1,0 +1,19 @@
+{
+  "pages": {
+    "/_not-found/page": [
+      "static/chunks/5de45_next_dist_977b5e53._.js",
+      "static/chunks/OneDrive_Desktop_part_src_app_favicon_ico_mjs_93f27e8b._.js",
+      "static/chunks/[root-of-the-server]__f8f59aa4._.css",
+      "static/chunks/OneDrive_Desktop_part_src_app_layout_d9f019e9.js",
+      "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_42460ac5._.js",
+      "static/chunks/5de45_next_dist_compiled_react-dom_df4395af._.js",
+      "static/chunks/5de45_next_dist_compiled_next-devtools_index_96878175.js",
+      "static/chunks/5de45_next_dist_compiled_3cff5ae0._.js",
+      "static/chunks/5de45_next_dist_client_be4e1a57._.js",
+      "static/chunks/5de45_next_dist_67a02127._.js",
+      "static/chunks/5de45_@swc_helpers_cjs_16b94034._.js",
+      "static/chunks/OneDrive_Desktop_part_a0ff3932._.js",
+      "static/chunks/turbopack-OneDrive_Desktop_part_c15da25b._.js"
+    ]
+  }
+}
