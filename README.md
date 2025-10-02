@@ -1,50 +1,64 @@
+# typed-array-length <sup>[![Version Badge][2]][1]</sup>
 
-# TypeScript
+[![dependency status][5]][6]
+[![dev dependency status][7]][8]
+[![License][license-image]][license-url]
+[![Downloads][downloads-image]][downloads-url]
 
-[![CI](https://github.com/microsoft/TypeScript/actions/workflows/ci.yml/badge.svg)](https://github.com/microsoft/TypeScript/actions/workflows/ci.yml)
-[![npm version](https://badge.fury.io/js/typescript.svg)](https://www.npmjs.com/package/typescript)
-[![Downloads](https://img.shields.io/npm/dm/typescript.svg)](https://www.npmjs.com/package/typescript)
-[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/microsoft/TypeScript/badge)](https://securityscorecards.dev/viewer/?uri=github.com/microsoft/TypeScript)
+[![npm badge][11]][1]
 
+Robustly get the length of a Typed Array, or `false` if it is not a Typed Array. Works cross-realm, in every engine, even if the `length` property is overridden.
 
-[TypeScript](https://www.typescriptlang.org/) is a language for application-scale JavaScript. TypeScript adds optional types to JavaScript that support tools for large-scale JavaScript applications for any browser, for any host, on any OS. TypeScript compiles to readable, standards-based JavaScript. Try it out at the [playground](https://www.typescriptlang.org/play/), and stay up to date via [our blog](https://blogs.msdn.microsoft.com/typescript) and [Twitter account](https://twitter.com/typescript).
+## Example
 
-Find others who are using TypeScript at [our community page](https://www.typescriptlang.org/community/).
+```js
+var typedArrayLength = require('typed-array-length');
+var assert = require('assert');
 
-## Installing
+assert.equal(false, typedArrayLength(undefined));
+assert.equal(false, typedArrayLength(null));
+assert.equal(false, typedArrayLength(false));
+assert.equal(false, typedArrayLength(true));
+assert.equal(false, typedArrayLength([]));
+assert.equal(false, typedArrayLength({}));
+assert.equal(false, typedArrayLength(/a/g));
+assert.equal(false, typedArrayLength(new RegExp('a', 'g')));
+assert.equal(false, typedArrayLength(new Date()));
+assert.equal(false, typedArrayLength(42));
+assert.equal(false, typedArrayLength(NaN));
+assert.equal(false, typedArrayLength(Infinity));
+assert.equal(false, typedArrayLength(new Number(42)));
+assert.equal(false, typedArrayLength('foo'));
+assert.equal(false, typedArrayLength(Object('foo')));
+assert.equal(false, typedArrayLength(function () {}));
+assert.equal(false, typedArrayLength(function* () {}));
+assert.equal(false, typedArrayLength(x => x * x));
+assert.equal(false, typedArrayLength([]));
 
-For the latest stable version:
-
-```bash
-npm install -D typescript
+assert.equal(1, typedArrayLength(new Int8Array(1)));
+assert.equal(2, typedArrayLength(new Uint8Array(2)));
+assert.equal(3, typedArrayLength(new Uint8ClampedArray(3)));
+assert.equal(4, typedArrayLength(new Int16Array(4)));
+assert.equal(5, typedArrayLength(new Uint16Array(5)));
+assert.equal(6, typedArrayLength(new Int32Array(6)));
+assert.equal(7, typedArrayLength(new Uint32Array(7)));
+assert.equal(8, typedArrayLength(new Float32Array(8)));
+assert.equal(9, typedArrayLength(new Float64Array(9)));
+assert.equal(10, typedArrayLength(new BigInt64Array(10)));
+assert.equal(11, typedArrayLength(new BigUint64Array(11)));
 ```
 
-For our nightly builds:
+## Tests
+Simply clone the repo, `npm install`, and run `npm test`
 
-```bash
-npm install -D typescript@next
-```
-
-## Contribute
-
-There are many ways to [contribute](https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md) to TypeScript.
-* [Submit bugs](https://github.com/microsoft/TypeScript/issues) and help us verify fixes as they are checked in.
-* Review the [source code changes](https://github.com/microsoft/TypeScript/pulls).
-* Engage with other TypeScript users and developers on [StackOverflow](https://stackoverflow.com/questions/tagged/typescript).
-* Help each other in the [TypeScript Community Discord](https://discord.gg/typescript).
-* Join the [#typescript](https://twitter.com/search?q=%23TypeScript) discussion on Twitter.
-* [Contribute bug fixes](https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md).
-
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see
-the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com)
-with any additional questions or comments.
-
-## Documentation
-
-*  [TypeScript in 5 minutes](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
-*  [Programming handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
-*  [Homepage](https://www.typescriptlang.org/)
-
-## Roadmap
-
-For details on our planned features and future direction, please refer to our [roadmap](https://github.com/microsoft/TypeScript/wiki/Roadmap).
+[1]: https://npmjs.org/package/typed-array-length
+[2]: https://versionbadg.es/inspect-js/typed-array-length.svg
+[5]: https://david-dm.org/inspect-js/typed-array-length.svg
+[6]: https://david-dm.org/inspect-js/typed-array-length
+[7]: https://david-dm.org/inspect-js/typed-array-length/dev-status.svg
+[8]: https://david-dm.org/inspect-js/typed-array-length#info=devDependencies
+[11]: https://nodei.co/npm/typed-array-length.png?downloads=true&stars=true
+[license-image]: http://img.shields.io/npm/l/typed-array-length.svg
+[license-url]: LICENSE
+[downloads-image]: http://img.shields.io/npm/dm/typed-array-length.svg
+[downloads-url]: http://npm-stat.com/charts.html?package=typed-array-length
